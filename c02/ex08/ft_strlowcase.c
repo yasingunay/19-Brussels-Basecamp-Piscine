@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ int main()
 {
     char str[] = "yAsiN 123";
 
-    ft_strupcase(str);
+    ft_strlowcase(str);
     printf("%s", str);
 }
 */

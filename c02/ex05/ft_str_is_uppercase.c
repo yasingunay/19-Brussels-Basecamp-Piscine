@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowercase(char *str)
+int	ft_str_is_uppercase(char *str)
 {
 	int	i;
 
@@ -28,9 +28,9 @@ int	ft_str_is_lowercase(char *str)
 #include <stdio.h>
 int main()
 {
-	char str[]="YasIN";
-	ft_str_is_lowercase(str);
-	printf("%d\n",ft_str_is_lowercase(str));
+	char str[]="YaSIN";
+	ft_str_is_uppercase(str);
+	printf("%d\n",ft_str_is_uppercase(str));
 	return (0);
 }
 */

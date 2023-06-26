@@ -29,7 +29,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	return (dest);
 }
 
-/*
+
 #include <stdio.h>
 #include <string.h>
 int main ()
@@ -42,4 +42,4 @@ int main ()
    printf("%s\n",dest);
     return 0;
 }
-*/
+

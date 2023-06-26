@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygunay <ygunay@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 18:49:09 by ygunay            #+#    #+#             */
-/*   Updated: 2021/09/14 18:49:53 by ygunay           ###   ########.fr       */
+/*   Created: 2021/09/14 20:45:47 by ygunay            #+#    #+#             */
+/*   Updated: 2021/09/14 20:45:50 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
@@ -18,10 +16,10 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	unsigned int	m;
 	unsigned int	p;
 
-	n = 0;
-	while (dst[n] != '\0')
+	n = 0; //dest lent
+	while (dest[n] != '\0')
 		n++;
-	p = 0;
+	p = 0; // src len
 	while (src[p] != '\0')
 		p++;
 	m = 0;
@@ -29,36 +27,37 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		return (p);
 	while ((src[m] != '\0') && ((n + m) < (size - 1)))
 	{
-		dst[n + m] = src[m];
+		dest[n + m] = src[m];
 		m ++;
 	}
-	dst[n + m] = '\0';
+	dest[n + m] = '\0';
 	if (size > n)
 		return (n + p);
 	return (size + p);
 }
 
-/*
+
+#include <stdio.h>
+#include <string.h>
+
 int main()
 {
-    char dst[20] = "merhaba";
+    char dest[20] = "hello";
     char src[] = "world";
     int r;
-	int size =13;
+	int size =10;
 
-   
- 
-    r=ft_strlcat(dst,src,size);
+    //r=ft_strlcat(dest,src,size);
 	
-    
-	printf("%s\n",dst);
+    r=strlcat(dest,src,size);
+	printf("%s\n",dest);
 
     printf("Value returned: %d\n",r);
-    if( r > size )
-       puts("String truncated");
-    else
-        puts("String was fully copied");
+    if( size <= r )
+       printf("String truncated\n");
+    if ( size >r)
+    	printf("String was fully copied\n");
 
     return(0);
 }
-*/
+
